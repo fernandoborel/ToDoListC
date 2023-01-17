@@ -1,0 +1,90 @@
+﻿@model IEnumerable<ListaTarefas.Models.Tarefas>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Home</h2>
+
+<p>
+    <a asp-action="Create">Nova Tarefa</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Inicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nivel)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Inicio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fim)
+                </td>
+
+                @if (item.Nivel == "Baixa")
+                {
+                    <td class="text-info">
+                        @Html.DisplayFor(modelItem => item.Nivel)
+                    </td>
+                }
+
+                @if (item.Nivel == "Média")
+                {
+                    <td class="text-warning">
+                        @Html.DisplayFor(modelItem => item.Nivel)
+                    </td>
+                }
+
+                @if (item.Nivel == "Crítica")
+                {
+                    <td class="text-danger">
+                        @Html.DisplayFor(modelItem => item.Nivel)
+                    </td>
+                }
+                @*<td>
+                    <a class="btn btn-info" asp-action="Edit" asp-route-id="@item.TarefasId">Editar</a> |
+                    <a class="btn btn-warning" asp-action="Details" asp-route-id="@item.TarefasId">Details</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.TarefasId">Delete</a>
+                </td>*@
+                <td>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Botão dropdown
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a asp-action="Edit" asp-route-id="@item.TarefasId">Editar</a> |
+                            <a asp-action="Details" asp-route-id="@item.TarefasId">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.TarefasId">Delete</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ListaDeTarefas.Models
+namespace ListaTarefas.Models
 {
     public class Tarefas
     {
@@ -9,5 +9,6 @@ namespace ListaDeTarefas.Models
         public string Descricao { get; set; }
         public DateTime Inicio { get; set; }
         public DateTime Fim { get; set; }
+        public string Nivel { get; set; }
     }
 }
