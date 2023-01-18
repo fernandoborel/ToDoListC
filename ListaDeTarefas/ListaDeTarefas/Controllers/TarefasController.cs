@@ -54,7 +54,7 @@ namespace ListaTarefas.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TarefasId,Nome,Descricao,Inicio,Fim,Importancia")] Tarefas tarefas)
+        public async Task<IActionResult> Create([Bind("TarefasId,Nome,Descricao,Inicio,Fim,Nivel")] Tarefas tarefas)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace ListaTarefas.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("TarefasId,Nome,Descricao,Inicio,Fim,Importancia")] Tarefas tarefas)
+        public async Task<IActionResult> Edit(int id, [Bind("TarefasId,Nome,Descricao,Inicio,Fim,Nivel")] Tarefas tarefas)
         {
             if (id != tarefas.TarefasId)
             {

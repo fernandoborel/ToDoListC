@@ -1,13 +1,13 @@
 ﻿@model ListaTarefas.Models.Tarefas
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes";
 }
 
-<h2>Details</h2>
+<h2>Detalhes</h2>
 
 <div>
-    <h4>Tarefas</h4>
+    <h4>Tarefa</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -34,15 +34,15 @@
         <dd>
             @Html.DisplayFor(model => model.Fim)
         </dd>
-        <dt>
+@*        <dt>
             @Html.DisplayNameFor(model => model.Nivel)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Nivel)
-        </dd>
+        </dd>*@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.TarefasId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model.TarefasId">Editar</a> |
+    <a class="btn btn-info" asp-action="Index">Voltar para lista</a>
 </div>
