@@ -1,5 +1,5 @@
 # ToDoListC
-## Lista de tarefas utilizando C# junto a estrutura MVC
+## Lista de tarefas utilizando ASP NET CORE.
 
 `Para testar` => Antes de começarmos é importante ter o Visual Studio 2022 instalado, esse projeto está utilizando a versão 2.1.4 do ASP NET CORE
 
@@ -11,3 +11,6 @@
 
 `Edit` => Você pode excluir, ver detalhes ou editar.
 
+`Preview`
+
+![FireShot Capture 013 - Index - ListaDeTarefas - localhost](https://user-images.githubusercontent.com/87503905/213195583-f89f2cd1-4506-43c5-bf09-9b2ac3abf502.png)
